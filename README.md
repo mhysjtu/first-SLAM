@@ -1,4 +1,4 @@
-# fist-SLAM
+# first-SLAM
 My first SLAM program, learning from gaoxiang12's slambook.
 ## Learning Roadmap
 + **Main route:**
@@ -8,3 +8,5 @@ My first SLAM program, learning from gaoxiang12's slambook.
 - B. For Core parts(e.g. Motion Estimation, Nonlinear Optimization, Loop Detection, etc), read RVCMVG book or ETH course's PPT to practice.
 ## 0809 Feature Detection Code
 - in ch7/feature_extraction_orb.cpp
+## 0810 2D-2D pose estimation Code
+- in ch7/pose_estimation_2d2d.cpp
