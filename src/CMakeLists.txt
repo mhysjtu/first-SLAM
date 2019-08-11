@@ -17,3 +17,12 @@ target_link_libraries(feature_extraction_orb ${OpenCV_LIBS})
 
 add_executable(pose_estimation_2d2d ch7/pose_estimation_2d2d.cpp)
 target_link_libraries(pose_estimation_2d2d ${OpenCV_LIBS})
+
+add_executable(triangulation ch7/triangulation.cpp)
+target_link_libraries(triangulation ${OpenCV_LIBS})
+
+add_executable(pose_estimation_2d3d ch7/pose_estimation_2d3d.cpp)
+target_link_libraries(pose_estimation_2d3d ${OpenCV_LIBS})
+
+add_executable(pose_estimation_3d3d ch7/pose_estimation_3d3d.cpp)
+target_link_libraries(pose_estimation_3d3d ${OpenCV_LIBS})
