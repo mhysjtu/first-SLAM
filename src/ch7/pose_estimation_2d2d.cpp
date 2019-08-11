@@ -15,17 +15,17 @@ void find_feature_matches (
 	std::vector< DMatch >& matches );
 
 void pose_estimation_2d2d(
-			vector<KeyPoint> keypoints_1, 
-			vector<KeyPoint> keypoints_2,
-			vector< DMatch > matches,
-			Mat& R, Mat& t);
+	const vector<KeyPoint> keypoints_1, 
+	const vector<KeyPoint> keypoints_2,
+	const vector< DMatch > matches,
+	Mat& R, Mat& t);
 
 Point2d pixel2cam(const Point2d& p, const Mat& K );
 
 int main(int argc, char **argv){
 
     if(argc!=3){
-        cout<<"usage: feature_extraction img1 img2"<<endl;
+        cout<<"usage: pose_estimation_2d2d img1 img2"<<endl;
         return 1;
     }
 
@@ -114,9 +114,9 @@ void find_feature_matches(
 }
 
 void pose_estimation_2d2d(
-	vector<KeyPoint> keypoints_1, 
-	vector<KeyPoint> keypoints_2,
-	vector< DMatch > matches,
+	const vector<KeyPoint> keypoints_1, 
+	const vector<KeyPoint> keypoints_2,
+	const vector< DMatch > matches,
 	Mat& R, Mat& t){
 
     Mat K = (Mat_ <double> (3, 3) << 520.9, 0, 325.1, 0, 521.0, 249.7, 0, 0, 1);
