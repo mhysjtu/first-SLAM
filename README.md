@@ -15,7 +15,7 @@ My first SLAM program, learning from gaoxiang12's slambook.
 3. select matches based on distance
 
 ## 0810 2D-2D pose estimation Code
-- in ch7/pose_estimation_2d2d.cpp<br>
+- in ch7/pose_estimation_2d2d.cpp
 
 1. epipolar geometry 
 - fundamental, essential, homography matrix 
@@ -37,3 +37,21 @@ My first SLAM program, learning from gaoxiang12's slambook.
   using ceres lib to solver curve fitting problem using LM method
 - in ch6/g2o_curve_fitting.cpp<br>
   using g2o lib to solver curve fitting problem using LM, GN, DogLeg method
+
+## 0813 BA for 2d-3d(PnP) and 3d-3d(ICP)
+### in ch7/pose_estimation_2d3d_BA.cpp
+1. using g2o lib to solver PnP problem using LM method
+- CSparse and Levenberg
+- Vertex:<br>
+  VertexSE3Expmap and VertexSBAPointXYZ 
+- Edge:<br>
+  EdgeProjectXYZ2UV
+### in ch7/pose_estimation_3d3d_BA.cpp<br>
+1. using g2o lib to solver ICP problem using LM method
+- Eigen and Levenberg
+- Vertex:<br>
+  VertexSE3Expmap 
+- Edge:<br>
+  EdgeProjectXYZRGBDPoseOnly : g2o::BaseUnaryEdge<br>
+  linearizeOplus
+
