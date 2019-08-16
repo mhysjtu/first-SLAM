@@ -9,13 +9,13 @@ My first SLAM program, learning from gaoxiang12's slambook.
 - B. For Core parts(e.g. Motion Estimation, Nonlinear Optimization, Loop Detection, etc), read RVCMVG book or ETH course's PPT to practice.
 
 ## 0809 Feature Detection Code
-- in ch7/feature_extraction_orb.cpp
-1. ORB features and descriptors
-2. match: brute force
-3. select matches based on distance
+### ch7/feature_extraction_orb.cpp
+- ORB features and descriptors
+- match: brute force
+- select matches based on distance
 
 ## 0810 2D-2D pose estimation Code
-- in ch7/pose_estimation_2d2d.cpp
+### ch7/pose_estimation_2d2d.cpp
 
 1. epipolar geometry 
 - fundamental, essential, homography matrix 
@@ -23,20 +23,20 @@ My first SLAM program, learning from gaoxiang12's slambook.
 - using cv::recoverPose
 
 ## 0811 2D-3D, 3D-3D pose estimation and triangulation Code
-- in ch7/pose_estimation_2d3d.cpp<br>
-  using cv::solvePnP(EPnP method)
-- in ch7/pose_estimation_3d3d.cpp<br>
-  using ICP + SVD(Eigen)
-- in ch7/triangulation.cpp
-  using cv::triangulatePoints<br>
+### ch7/pose_estimation_2d3d.cpp<br>
+- using cv::solvePnP(EPnP method)
+### ch7/pose_estimation_3d3d.cpp<br>
+- using ICP + SVD(Eigen)
+### ch7/triangulation.cpp
+- using cv::triangulatePoints<br>
 
 ## 0812 nonlinear optimization for least square
 - In order to solve 2d3d and 3d3d by BA method, basic nonlinear optimization and ceres/g2o lib should be learned first.
 
-- in ch6/ceres_curve_fitting.cpp<br>
-  using ceres lib to solver curve fitting problem using LM method
-- in ch6/g2o_curve_fitting.cpp<br>
-  using g2o lib to solver curve fitting problem using LM, GN, DogLeg method
+### ch6/ceres_curve_fitting.cpp<br>
+- using ceres lib to solver curve fitting problem using LM method
+### ch6/g2o_curve_fitting.cpp<br>
+- using g2o lib to solver curve fitting problem using LM, GN, DogLeg method
 
 ## 0813 BA for 2d-3d(PnP) and 3d-3d(ICP)
 ### in ch7/pose_estimation_2d3d_BA.cpp
@@ -54,4 +54,16 @@ My first SLAM program, learning from gaoxiang12's slambook.
 - Edge:<br>
   EdgeProjectXYZRGBDPoseOnly : g2o::BaseUnaryEdge<br>
   linearizeOplus
+
+## 0814 have a lesson, which introduces factor graph for BA & frameworks for popular VIO, such as MSCKF, ROVIO, VINS, VI-ORB and ICE-BA & VINS's BA and marginalization. Provided Shenlanxueyuan
+
+## 0815 start reading VINS-Mono source code
+
+## 0816 back-end BA, using g2o
+### in ch10, which is a new package
+- result is shown in beforeBA and afterBA.png
+- using ceres for auto differentiate
+- main code for using g2o solver is in src folder
+
+
 
