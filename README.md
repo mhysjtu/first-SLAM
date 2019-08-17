@@ -60,10 +60,14 @@ My first SLAM program, learning from gaoxiang12's slambook.
 ## 0815 start reading VINS-Mono source code
 
 ## 0816 back-end BA, using g2o
-### in ch10, which is a new package
+### in ch10/g2o_bundle, which is a new package
 - result is shown in beforeBA and afterBA.png
 - using ceres for auto differentiate
 - main code for using g2o solver is in src folder
 
-
+## 0817 back-end BA, using ceres
+### in ch10/ceres_bundle, which is a new package
+- result is shown in beforeBA and afterBA.png
+- Jacobian is calculated by ceres's auto differentiate
+- main code for using ceres solver is in src folder
 

@@ -1,0 +1,40 @@
+#ifndef REPROJECTIONERROR_H
+#define REPROJECTIONERROR_H
+
+#include <iostream>
+#include "ceres/ceres.h"
+
+#include "../common/tools/rotation.h"
+#include "../common/projection.h"
+
+class ReprojectionError
+{
+public:
+	ReprojectionError(double observation_x, double observation_y):
+	observed_x(observation_x), observed_y(observation_y){}
+
+	//cost function
+	template<typename T>
+	bool operator()(const T* const camera, const T* const point,
+		T* residuals) const
+	{
+		T predictions[2];
+		CamProjectionWithDistortion(camera, point, predictions);
+		residuals[0] = predictions[0] - T(observed_x);
+		residuals[1] = predictions[1] - T(observed_y);
+
+		return true;
+	}
+
+	//jacobian for cost function, using ceres's autodiff
+	static ceres::CostFunction* Create(const double observed_x, const double observed_y)
+	{
+		return (new ceres::AutoDiffCostFunction<ReprojectionError, 2, 9, 3>(
+				new ReprojectionError(observed_x, observed_y)));
+	}
+private:
+	double observed_x;
+	double observed_y;
+};
+
+#endif//REPROJECTIONERROR_H
